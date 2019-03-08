@@ -6,7 +6,7 @@ import LoadingPika from './containers/LoadingPika';
 import { Segment } from 'semantic-ui-react';
 import './App.css';
 
-const API = 'http://localhost:3000';
+const API = 'https://shrouded-ravine-36412.herokuapp.com';
 
 class App extends Component {
 	constructor() {
