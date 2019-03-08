@@ -1,0 +1,31 @@
+.pokeCard {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-content: center;
+	height: 400px;
+	width: 400px;
+}
+
+.pokeCardImg {
+	height: 250px;
+	width: 250px;
+} 
+
+.pokeCardContent {
+	padding-bottom: 2em;
+}
+
+#choose-catch {
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.profile-text {
+	font-size: 24px;
+}
+
+#choose-card {
+	background-image: url('../images/chosen.gif');
+	background-size: 100%;
+}

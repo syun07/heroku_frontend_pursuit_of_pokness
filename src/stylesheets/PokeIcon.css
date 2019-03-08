@@ -1,0 +1,17 @@
+div.ui.card.icon {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+	
+div.ui.card.main {
+	border: 2px solid red;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+  
+div.ui.card.icon:hover {
+	border: 2px solid blue;
+}
+  

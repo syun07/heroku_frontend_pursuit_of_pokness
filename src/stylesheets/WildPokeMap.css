@@ -1,0 +1,94 @@
+.region{
+	position: absolute;
+}
+
+#kanto {
+	top: 375px;
+	left: 348px;
+	width: 430px;
+	padding: 10px;
+	height: 300px;
+}  
+
+
+#johto {
+	top: 47px;
+	left: 430px;
+	width: 430px;
+	padding: 10px;
+	height: 300px;
+} 
+
+#hoenn {
+  top: 316px;
+  left: 963px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
+}
+ 
+#sinnoh {
+	top: 179px;
+	left: 10px;
+	width: 430px;
+	padding: 10px;
+	height: 300px;
+} 
+
+#rando {
+	top: 4px;
+	left: 820px;
+	width: 430px;
+	padding: 10px;
+	height: 300px;
+}
+
+.pokeImg0 {
+  margin-bottom: 3px;
+  margin-left: 10px;
+}
+
+.pokeImg1 {
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.pokeImg2 {
+  margin-left: 33px;
+  margin-bottom: 42px;
+}
+
+.pokeImg3 {
+  margin-left: 0em;
+} 
+
+.pokeImg4 {
+  margin-left: 2em;
+  margin-bottom: 4em;
+}
+
+.pokeImg5 {
+  margin-left: 2em;
+  margin-bottom: 52px;
+}
+
+.region img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
+}
+
+#refreshBtn {
+  position: absolute;
+  margin-left: 34em;
+  margin-top: 34em;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+#logout-btn {
+  position: absolute;
+  margin-left: 66em;
+  margin-top: 0em;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
