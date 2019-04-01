@@ -14,9 +14,9 @@ class OpeningPage extends Component {
 
 	handleShow = (event) => {
 		event.preventDefault()
-		this.setState({
-			whichForm: 'l'
-		})
+		// this.setState({
+		// 	whichForm: 'l'
+		// })
 		event.target.reset()
 		this.props.handleSignup(event)
 	}

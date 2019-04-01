@@ -131,7 +131,7 @@ class App extends Component {
 		event.preventDefault();
 		this.getAuthToken({ name: this.state.name, password: this.state.password }).then(payload => {
 			if (payload.user) {
-				localStorage.setItem("token", payload.token)
+				localStorage.setItem("token", payload.jwt)
 				this.setState({
 					enterPage: 'p'
 				})
@@ -187,6 +187,18 @@ class App extends Component {
 				image: this.state.newImage
 			})
 		}).then(res => res.json())
+		.then(this.getAuthToken({ name: this.state.newName, password: this.state.newPassword }))
+		.then(payload => {
+			if (payload.user) {
+				localStorage.setItem("token", payload.jwt)
+				this.setState({
+					enterPage: 'p'
+				})
+				return fetch(`${API}/users/${payload.user.id.toString()}`).then(this.finishLogin)
+			} else {
+				alert("INVALID LOGIN!")
+			}
+		})
 	}
 
 	selectWildPoke = (poke) => {
@@ -254,7 +266,8 @@ class App extends Component {
 	}
 
 	reloadPage = () => {
-		window.location.reload()
+		this.setState({enterPage: 'o', whichForm: 'b'})
+		localStorage.clear()
 	}
 
 	render() {
