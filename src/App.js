@@ -187,16 +187,19 @@ class App extends Component {
 				image: this.state.newImage
 			})
 		}).then(res => res.json())
-		.then(this.getAuthToken({ name: this.state.newName, password: this.state.newPassword }))
-		.then(payload => {
-			if (payload.user) {
-				localStorage.setItem("token", payload.jwt)
-				this.setState({
-					enterPage: 'p'
-				})
-				return fetch(`${API}/users/${payload.user.id.toString()}`).then(this.finishLogin)
+		.then(res => {
+			if (res.errors) {
+				alert("Sorry, username has already been taken") 
 			} else {
-				alert("INVALID LOGIN!")
+				this.getAuthToken({ name: this.state.newName, password: this.state.newPassword })
+				.then(payload => {
+					localStorage.setItem("token", payload.jwt)
+					this.setState({
+						enterPage: 'p'
+					})
+					return fetch(`${API}/users/${payload.user.id.toString()}`)
+					.then(this.finishLogin)
+				})
 			}
 		})
 	}
