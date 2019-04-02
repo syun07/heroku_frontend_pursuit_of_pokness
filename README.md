@@ -9,3 +9,4 @@ Designed game-like user interface using Semantic UI React and custom CSS animati
 Implemented JWT library to authorize and authenticate user login on frontend and backend. <br/>
 Persisted user’s caught Pokémon in backend using Ruby on Rails and PostGresSQL. <br/>
 Wrote custom algorithm to randomly generate Pokémon on map based on region fetched from [PokeAPI](https://pokeapi.co/). <br/>
+Both frontend and backend deployed on Heroku
