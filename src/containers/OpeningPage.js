@@ -14,9 +14,6 @@ class OpeningPage extends Component {
 
 	handleShow = (event) => {
 		event.preventDefault()
-		// this.setState({
-		// 	whichForm: 'l'
-		// })
 		event.target.reset()
 		this.props.handleSignup(event)
 	}
@@ -90,23 +87,33 @@ class OpeningPage extends Component {
 
 		const buttons = 
 			<div id='buttons'>
-				<h1 id='title'>THE PURSUIT OF POKENESS</h1>
+				<div>
+					<h1 id='title'>THE PURSUIT OF POKENESS</h1>
 
-				<br />
-				
-				<Button
-					id='login-btn'
-					inverted
-					onClick={() => this.setState({whichForm: 'l'})}>
-					LOGIN
-				</Button>
+					<br />
+					
+					<Button
+						id='login-btn'
+						inverted
+						onClick={() => this.setState({whichForm: 'l'})}>
+						LOGIN
+					</Button>
 
-				<Button
-					id='signup-btn'
-					color='orange'
-					onClick={() => this.setState({whichForm: 's'})}>
-					SIGN UP
-				</Button>
+					<Button
+						id='signup-btn'
+						color='orange'
+						onClick={() => this.setState({whichForm: 's'})}>
+						SIGN UP
+					</Button>
+				</div>
+				<div>
+					<Button
+						id='demo-btn'
+						color='green'
+						onClick={this.props.handleDemo}>
+						CLICK HERE FOR DEMO
+					</Button>
+				</div>
 			</div>
 
 		const goBackBtn =

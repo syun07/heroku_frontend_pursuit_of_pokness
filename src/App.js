@@ -140,7 +140,7 @@ class App extends Component {
 				alert("INVALID LOGIN!")
 			}
 		})
-	}
+	} 
 
 	getAuthToken(loginInfo) {
 		return fetch(`${API}/login`, {
@@ -200,6 +200,18 @@ class App extends Component {
 					return fetch(`${API}/users/${payload.user.id.toString()}`)
 					.then(this.finishLogin)
 				})
+			}
+		})
+	} 
+
+	handleDemo = () => {
+		this.getAuthToken({ name: "hello", password: "world" }).then(payload => {
+			if (payload.user) {
+				localStorage.setItem("token", payload.jwt)
+				this.setState({
+					enterPage: 'p'
+				})
+				return fetch(`${API}/users/${payload.user.id.toString()}`).then(this.finishLogin)
 			}
 		})
 	}
@@ -306,7 +318,8 @@ class App extends Component {
 				<OpeningPage
 					handleLogin={this.handleLogin}
 					handleSignup={this.handleSignup}
-					handleChange={this.handleChange} />
+					handleChange={this.handleChange}
+					handleDemo={this.handleDemo} />
 			</Segment>
 		
 		let showMe 
